@@ -458,6 +458,13 @@ extern const struct _mp_obj_module_t am2320_module;
 #define BUILTIN_MODULE_AM2320
 #endif
 
+#ifdef CONFIG_DRIVER_AHT10_ENABLE
+extern const struct _mp_obj_module_t aht10_module;
+#define BUILTIN_MODULE_AHT10 { MP_OBJ_NEW_QSTR(MP_QSTR_aht10), (mp_obj_t)&aht10_module },
+#else
+#define BUILTIN_MODULE_AHT10
+#endif
+
 #if MICROPY_PY_UCRYPTOLIB
 #define BUILTIN_MODULE_UCRYPTOLIB { MP_OBJ_NEW_QSTR(MP_QSTR_ucryptolib), (mp_obj_t)&mp_module_ucryptolib },
 #else
@@ -493,6 +500,7 @@ extern const struct _mp_obj_module_t am2320_module;
 	BUILTIN_MODULE_DISOBEY_SAMD \
 	BUILTIN_MODULE_MPU6050 \
 	BUILTIN_MODULE_AM2320 \
+	BUILTIN_MODULE_AHT10 \
 	{ MP_OBJ_NEW_QSTR(MP_QSTR_espnow), (mp_obj_t)&espnow_module }, \
 
 #define MICROPY_PORT_BUILTIN_MODULE_WEAK_LINKS \

@@ -277,6 +277,11 @@ MP_EXTRA_INC += -I$(PROJECT_PATH)/components/driver_sensor_am2320/include
 SRC_C += esp32/modam2320.c
 endif
 
+ifdef CONFIG_DRIVER_AHT10_ENABLE
+MP_EXTRA_INC += -I$(PROJECT_PATH)/components/driver_sensor_aht10/include
+SRC_C += esp32/modaht10.c
+endif
+
 EXTMOD_SRC_C = $(addprefix extmod/,\
 	modbtree.c \
 	moducryptolib.c \
