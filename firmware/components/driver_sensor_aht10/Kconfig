@@ -1,0 +1,6 @@
+menu "Driver: AHT10 I2C temp/hum sensor"
+        config DRIVER_AHT10_ENABLE
+	        depends on DRIVER_I2C_ENABLE
+		bool "Enable the AHT10 I2C driver"
+		default n
+endmenu
