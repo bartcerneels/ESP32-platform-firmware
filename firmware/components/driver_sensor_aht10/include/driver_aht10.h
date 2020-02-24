@@ -15,7 +15,7 @@
 
 __BEGIN_DECLS
 
-extern esp_err_t driver_aht10_init(void);
+extern esp_err_t driver_aht10_init();
 extern float driver_aht10_get_temperature();
 extern float driver_aht10_get_humidity();
 extern esp_err_t driver_aht10_read_sensor(float *temperature, float *humidity);
